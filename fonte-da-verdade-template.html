@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fonte da Verdade - {{NOME_DO_PROJETO}}</title>
+    <style>
+
+/* Ultra Modern Premium Redesign (Vercel/Stripe aesthetic) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+    --bg-base: #fcfcfd;
+    --bg-gradient: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    --surface: rgba(255, 255, 255, 0.85);
+    --surface-solid: #ffffff;
+    --border: rgba(0, 0, 0, 0.06);
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    
+    --brand-primary: #000000;
+    --brand-accent: #3b82f6;
+    
+    --green: #10b981;
+    --green-bg: rgba(16, 185, 129, 0.1);
+    --yellow: #f59e0b;
+    --yellow-bg: rgba(245, 158, 11, 0.1);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.1);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59, 130, 246, 0.1);
+    --violet: #8b5cf6;
+    --violet-bg: rgba(139, 92, 246, 0.1);
+    --gray: #6b7280;
+    --gray-bg: rgba(107, 114, 128, 0.08);
+
+    --shadow-subtle: 0 1px 3px rgba(0,0,0,0.02), 0 4px 6px rgba(0,0,0,0.02);
+    --shadow-float: 0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+    --shadow-hover: 0 12px 32px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.02);
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    
+    --glass-blur: blur(16px);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    margin: 0; 
+    color: var(--text-main); 
+    background: var(--bg-base);
+    background-image: var(--bg-gradient);
+    font-family: 'Inter', -apple-system, sans-serif; 
+    line-height: 1.6; 
+    font-size: 15px; 
+    -webkit-font-smoothing: antialiased; 
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Outfit', sans-serif; 
+    color: var(--text-main); 
+    letter-spacing: -0.03em;
+}
+
+a { color: var(--brand-accent); text-decoration: none; transition: all 0.2s ease; }
+a:hover { color: #2563eb; text-decoration: underline; }
+code { 
+    padding: 0.2em 0.5em; 
+    border-radius: var(--radius-sm); 
+    background: var(--gray-bg); 
+    color: var(--text-main); 
+    font-family: 'SFMono-Regular', Consolas, monospace; 
+    font-size: 0.85em; 
+}
+
+.layout { display: flex; min-height: 100vh; }
+.main-content { flex: 1; padding: 48px; width: 100%; max-width: 1300px; margin: 0 auto; }
+
+/* Hero redesign */
+.hero { 
+    padding: 24px 32px; 
+    border: 1px solid var(--border); 
+    border-radius: var(--radius-lg); 
+    background: var(--surface); 
+    backdrop-filter: var(--glass-blur);
+    margin-bottom: 32px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 16px; 
+    flex-wrap: wrap; 
+    box-shadow: var(--shadow-subtle); 
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: linear-gradient(180deg, var(--violet), var(--blue));
+}
+
+.eyebrow { 
+    display: inline-block; margin: 0 0 12px; color: var(--violet); font-size: 11px; 
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; 
+    background: var(--violet-bg); padding: 4px 10px; border-radius: 99px; 
+}
+h1 { margin: 0 0 8px; font-size: 32px; font-weight: 800; line-height: 1.2; }
+.lead { max-width: 900px; color: var(--text-muted); font-size: 15px; margin-bottom: 0; }
+
+.meta-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding-top: 24px; border-top: 1px dashed var(--border); }
+.meta-item { padding: 12px 20px; background: rgba(255,255,255,0.5); border-radius: var(--radius-md); border: 1px solid var(--border); flex: 1; min-width: 140px; }
+.meta-item span { display: block; margin-bottom: 4px; color: var(--text-muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.meta-item strong { color: var(--text-main); font-size: 14px; font-weight: 600; font-family: 'Outfit'; }
+
+.callout { margin: 24px 0; padding: 20px 24px; border-radius: var(--radius-md); border-left: 3px solid; background: var(--surface); box-shadow: var(--shadow-subtle); }
+.callout strong { display: block; font-family: 'Outfit'; font-weight: 600; font-size: 16px; margin-bottom: 6px; }
+.callout.info { border-left-color: var(--blue); background: var(--blue-bg); }
+.callout.warn { border-left-color: var(--yellow); background: var(--yellow-bg); }
+.callout.risk { border-left-color: var(--red); background: var(--red-bg); }
+.callout.good { border-left-color: var(--green); background: var(--green-bg); }
+
+.badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap; text-transform: uppercase; }
+.badge.implemented, .implemented { color: var(--green); background: var(--green-bg); }
+.badge.partial, .partial { color: var(--yellow); background: var(--yellow-bg); }
+.badge.missing, .missing { color: var(--red); background: var(--red-bg); }
+.badge.risk-badge, .risk-badge { color: var(--red); background: var(--red-bg); border: 1px solid rgba(239, 68, 68, 0.2); }
+.badge.decision, .decision { color: var(--violet); background: var(--violet-bg); }
+.badge.decided, .decided { color: var(--blue); background: var(--blue-bg); }
+.badge.market, .market { color: var(--gray); background: var(--gray-bg); }
+.badge.stripe-owner { color: var(--blue); background: var(--blue-bg); border: 1px solid rgba(37, 99, 235, 0.18); }
+.badge.local-owner { color: var(--gray); background: var(--gray-bg); border: 1px solid rgba(71, 85, 105, 0.18); }
+.badge.hybrid-owner { color: #4338ca; background: #eef2ff; border: 1px solid rgba(67, 56, 202, 0.18); }
+.kanban-owner-legend { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 4px 18px; color: var(--text-muted); font-size: 12px; }
+
+/* Borderless tables */
+.table-wrap { overflow-x: auto; margin: 32px 0; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface-solid); box-shadow: var(--shadow-float); }
+table { width: 100%; border-collapse: collapse; min-width: 600px; }
+th, td { padding: 16px 20px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 14px; }
+th { color: var(--text-muted); background: rgba(0,0,0,0.01); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Outfit'; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(0,0,0,0.01); }
+
+/* Evidence Grid */
+.evidence-grid { display: grid; gap: 24px; margin: 32px 0; grid-template-columns: repeat(3, 1fr); }
+.evidence-item { overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-solid); box-shadow: var(--shadow-float); transition: transform 0.2s, box-shadow 0.2s; }
+.evidence-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.evidence-item img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--border); object-fit: contain; background: #fafafa; cursor: zoom-in; }
+.evidence-item div { padding: 16px; }
+.evidence-item div strong { font-size: 14px; font-family: 'Outfit'; display: block; margin-bottom: 4px; }
+
+/* Ultra Modern Kanban */
+.kanban-board { display: flex; overflow-x: auto; gap: 24px; padding: 12px 4px 32px; align-items: flex-start; }
+.kanban-board::-webkit-scrollbar { height: 8px; }
+.kanban-board::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 8px; }
+.kanban-col { flex: 0 0 416px; width: 416px; min-width: 416px; background: rgba(0,0,0,0.02); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 16px; display: flex; flex-direction: column; gap: 16px; min-height: 400px; }
+.kanban-col-header { font-size: 14px; font-family: 'Outfit'; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 8px; border-bottom: 2px solid transparent; }
+.kanban-col-header span.count { background: var(--surface-solid); box-shadow: var(--shadow-subtle); color: var(--text-muted); padding: 2px 10px; border-radius: 99px; font-size: 12px; }
+
+.kanban-col[data-col="nao-realizado"] .kanban-col-header { color: var(--red); border-bottom-color: var(--red-bg); }
+.kanban-col[data-col="em-andamento"] .kanban-col-header { color: var(--yellow); border-bottom-color: var(--yellow-bg); }
+.kanban-col[data-col="finalizado"] .kanban-col-header { color: var(--green); border-bottom-color: var(--green-bg); }
+.kanban-col[data-col="futuro"] .kanban-col-header { color: var(--gray); border-bottom-color: var(--gray-bg); }
+
+.kanban-card { background: var(--surface-solid); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); cursor: pointer; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); padding: 20px; display: flex; align-items: flex-start; justify-content: space-between; position: relative; overflow: hidden; }
+.kanban-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: transparent; transition: background 0.2s; }
+.kanban-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow-hover); border-color: rgba(0,0,0,0.1); }
+.kanban-card:hover::before { background: var(--blue); }
+.kanban-card h2 { margin: 0 0 4px 0; font-size: 15px; font-family: 'Outfit'; font-weight: 600; line-height: 1.4; color: var(--text-main); }
+.kanban-card-icon { color: var(--text-muted); margin-top: 2px; transition: color 0.2s; }
+.kanban-card:hover .kanban-card-icon { color: var(--brand-accent); }
+
+/* Dialog/Modal Styles Premium */
+.dialog-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: var(--glass-blur); z-index: 1000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+.dialog-overlay.active { opacity: 1; display: flex; }
+.dialog-window { background: var(--surface-solid); width: 94%; max-width: 900px; height: 85vh; border-radius: var(--radius-lg); box-shadow: 0 30px 60px rgba(0,0,0,0.12); border: 1px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; transform: scale(0.96) translateY(20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.dialog-overlay.active .dialog-window { transform: scale(1) translateY(0); }
+.dialog-header { padding: 24px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: var(--glass-blur); border-top-left-radius: var(--radius-lg); border-top-right-radius: var(--radius-lg); }
+.dialog-header h2 { margin: 0; font-size: 20px; font-family: 'Outfit'; font-weight: 700; }
+.dialog-close { cursor: pointer; background: var(--gray-bg); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: all 0.2s; font-size: 20px; }
+.dialog-close:hover { background: rgba(0,0,0,0.05); color: var(--red); transform: rotate(90deg); }
+.dialog-body { padding: 32px; overflow-y: auto; flex: 1; }
+.dialog-body::-webkit-scrollbar { width: 8px; }
+.dialog-body::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 8px; }
+
+/* Lightbox Modal */
+.lightbox-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: var(--glass-blur); z-index: 2000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+.lightbox-modal.active { opacity: 1; display: flex; }
+.lightbox-content { max-width: 90%; max-height: 90vh; border-radius: var(--radius-md); box-shadow: 0 30px 60px rgba(0,0,0,0.3); object-fit: contain; transform: scale(0.96); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.lightbox-modal.active .lightbox-content { transform: scale(1); }
+.lightbox-close { position: absolute; top: 24px; right: 32px; font-size: 36px; color: rgba(255,255,255,0.7); cursor: pointer; transition: color 0.2s, transform 0.2s; user-select: none; background: transparent; border: none; }
+.lightbox-close:hover { color: #fff; transform: rotate(90deg); }
+
+/* Tab Menu Styles */
+.top-menu {
+    display: flex;
+    overflow-x: auto;
+    gap: 4px;
+    padding: 6px;
+    margin-bottom: 24px;
+    background: rgba(0,0,0,0.03);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+.top-menu-item {
+    padding: 10px 20px;
+    font-family: 'Outfit';
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.top-menu-item:hover {
+    color: var(--text-main);
+    background: rgba(0,0,0,0.02);
+}
+.top-menu-item.active {
+    color: var(--brand-primary);
+    background: var(--surface-solid);
+    box-shadow: var(--shadow-float);
+}
+.document-panel {
+    display: none;
+    background: var(--surface);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-float);
+    overflow: hidden;
+    width: 100%;
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.document-panel.active {
+    display: block;
+}
+.document-panel .panel-content {
+    padding: 40px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid layouts */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin: 24px 0; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 24px 0; }
+.section-card { padding: 24px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-solid); }
+.section-card h3 { margin-top: 0; }
+
+/* Flow steps */
+.flow { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.flow-step { padding: 16px 20px; border-left: 3px solid var(--blue); background: var(--blue-bg); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; }
+
+/* Test cards */
+.test-card { border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; margin-bottom: 16px; background: var(--surface-solid); box-shadow: var(--shadow-subtle); }
+.test-card h3 { margin-top: 0; font-family: 'Outfit'; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.test-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; font-size: 13px; }
+.test-grid > div { padding: 12px; background: rgba(0,0,0,0.015); border-radius: var(--radius-sm); }
+.coverage-ok { border-left: 3px solid var(--green); }
+.coverage-partial { border-left: 3px solid var(--yellow); }
+.coverage-pending { border-left: 3px solid var(--red); }
+.evidence-links { margin-top: 8px; font-size: 12px; color: var(--text-muted); }
+
+/* Source list */
+.source-list { display: flex; flex-direction: column; gap: 4px; margin: 16px 0; }
+.source-list a { font-size: 13px; padding: 6px 12px; border-radius: var(--radius-sm); transition: background 0.15s; }
+.source-list a:hover { background: var(--blue-bg); }
+
+/* Small text */
+.small { font-size: 12px; color: var(--text-muted); }
+</style>
+
+
+</head>
+<body>
+
+<div class="layout">
+    <div class="main-content">
+        <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+        <!-- ║  HERO SECTION — Substitua os {{PLACEHOLDERS}} pelo projeto  ║ -->
+        <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+        <div class="hero" style="padding: 16px 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); margin-bottom: 24px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--blue);">
+    <details class="hero-collapse" style="width: 100%;">
+        <summary style="display: flex; align-items: center; justify-content: space-between; list-style: none; cursor: pointer; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <h1 style="margin: 0; font-size: 18px; font-weight: 800; color: var(--ink); line-height: 1;">🗺️ {{TITULO_DO_PROJETO}}</h1>
+                <span class="badge decided" style="margin:0; padding: 2px 8px; font-size: 11px;">Fonte da Verdade</span>
+            </div>
+            <div style="display: flex; gap: 16px; font-size: 12px; color: var(--muted); align-items: center;">
+                <div><span style="font-weight:600;color:var(--text);">Status:</span> {{STATUS}}</div>
+                <div><span style="font-weight:600;color:var(--text);">Revisão:</span> {{DATA_REVISAO}}</div>
+                <div><span style="font-weight:600;color:var(--text);">Core:</span> {{TECNOLOGIA_CORE}}</div>
+                <div class="hero-toggle-icon" style="color: var(--blue); margin-left: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+            </div>
+        </summary>
+        <div class="hero-expanded-content" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text); line-height: 1.6;">
+            <p style="margin-bottom: 8px;"><strong>{{DESCRICAO_CURTA}}</strong></p>
+            <p style="margin-bottom: 0; font-weight: 600; color: var(--blue);">⚠️ {{DISCLAIMER_ATUALIZACAO}}</p>
+        </div>
+    </details>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  PAINEL 1: ARQUITETURA — Visão geral, fluxos, decisões e testes    ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<details class="document-panel" id="arquitetura-tests-panel">
+    <summary>
+        <div style="display:flex; align-items:center; gap: 12px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green);"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            Arquitetura
+        </div>
+        <div class="panel-toggle-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </summary>
+    <div class="panel-content">
+
+        <!-- Sub-painel: Visão Geral -->
+        <details style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); padding: 16px; box-shadow: var(--shadow-sm);" open>
+            <summary style="font-size: 18px; font-weight: 700; cursor: pointer; color: var(--text); display: flex; align-items: center; gap: 8px; outline: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray)"><path d="M9 18l6-6-6-6"/></svg>
+                Visão Geral Do Sistema
+            </summary>
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div class="callout good">
+                <strong>Resumo executivo:</strong>
+                <p>{{RESUMO_EXECUTIVO_DO_PROJETO}}</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="section-card">
+                    <h3>Públicos</h3>
+                    <ul>
+                        <li><strong>Admin:</strong> {{DESCRICAO_PUBLICO_ADMIN}}</li>
+                        <li><strong>Usuário:</strong> {{DESCRICAO_PUBLICO_USUARIO}}</li>
+                        <li><strong>Sistema:</strong> {{DESCRICAO_PUBLICO_SISTEMA}}</li>
+                    </ul>
+                </div>
+                <div class="section-card">
+                    <h3>Modelo Atual</h3>
+                    <ul>
+                        <li>{{MODELO_ITEM_1}}</li>
+                        <li>{{MODELO_ITEM_2}}</li>
+                        <li>{{MODELO_ITEM_3}}</li>
+                    </ul>
+                </div>
+                <div class="section-card">
+                    <h3>Gateways E Integrações</h3>
+                    <ul>
+                        <li>{{GATEWAY_ITEM_1}}</li>
+                        <li>{{GATEWAY_ITEM_2}}</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </details>
+
+        <!-- Sub-painel: Fluxos Principais -->
+        <details style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); padding: 16px; box-shadow: var(--shadow-sm);">
+            <summary style="font-size: 18px; font-weight: 700; cursor: pointer; color: var(--text); display: flex; align-items: center; gap: 8px; outline: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray)"><path d="M9 18l6-6-6-6"/></svg>
+                Fluxos Principais
+            </summary>
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div class="flow">
+                <div class="flow-step"><strong>1. {{PASSO_1_TITULO}}:</strong> {{PASSO_1_DESCRICAO}}</div>
+                <div class="flow-step"><strong>2. {{PASSO_2_TITULO}}:</strong> {{PASSO_2_DESCRICAO}}</div>
+                <div class="flow-step"><strong>3. {{PASSO_3_TITULO}}:</strong> {{PASSO_3_DESCRICAO}}</div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Camada</th>
+                        <th>Arquivo principal</th>
+                        <th>Responsabilidade</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{CAMADA_1}}</td>
+                        <td><code>{{ARQUIVO_1}}</code></td>
+                        <td>{{RESPONSABILIDADE_1}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{CAMADA_2}}</td>
+                        <td><code>{{ARQUIVO_2}}</code></td>
+                        <td>{{RESPONSABILIDADE_2}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </details>
+
+        <!-- Sub-painel: Decisões Técnicas -->
+        <details style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); padding: 16px; box-shadow: var(--shadow-sm);">
+            <summary style="font-size: 18px; font-weight: 700; cursor: pointer; color: var(--text); display: flex; align-items: center; gap: 8px; outline: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray)"><path d="M9 18l6-6-6-6"/></svg>
+                Decisões Técnicas
+            </summary>
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div class="grid-2">
+                <div class="section-card">
+                    <h3>{{DECISAO_1_TITULO}}</h3>
+                    <p>{{DECISAO_1_DESCRICAO}}</p>
+                </div>
+                <div class="section-card">
+                    <h3>{{DECISAO_2_TITULO}}</h3>
+                    <p>{{DECISAO_2_DESCRICAO}}</p>
+                </div>
+            </div>
+            </div>
+        </details>
+
+        <!-- Sub-painel: Estratégia de Testes -->
+        <details style="margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); padding: 16px; box-shadow: var(--shadow-sm);">
+            <summary style="font-size: 18px; font-weight: 700; cursor: pointer; color: var(--text); display: flex; align-items: center; gap: 8px; outline: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray)"><path d="M9 18l6-6-6-6"/></svg>
+                Estratégia de Testes
+            </summary>
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);">
+        <div class="callout info" style="margin-top:0;">
+            <strong>Objetivo:</strong>
+            <p>{{OBJETIVO_DOS_TESTES}}</p>
+        </div>
+        <div class="grid-3">
+            <div class="section-card">
+                <h3>Camada 1: {{CAMADA_TESTE_1}}</h3>
+                <p>{{DESCRICAO_CAMADA_TESTE_1}}</p>
+            </div>
+            <div class="section-card">
+                <h3>Camada 2: {{CAMADA_TESTE_2}}</h3>
+                <p>{{DESCRICAO_CAMADA_TESTE_2}}</p>
+            </div>
+            <div class="section-card">
+                <h3>Camada 3: {{CAMADA_TESTE_3}}</h3>
+                <p>{{DESCRICAO_CAMADA_TESTE_3}}</p>
+            </div>
+        </div>
+
+        <div class="callout good">
+            <strong>Regra de evidência:</strong>
+            <p>Toda funcionalidade que tenha tela, botão, alerta, email ou estado visual precisa ter screenshot e o link deve ficar dentro do card correspondente no kanban.</p>
+        </div>
+            </div>
+        </details>
+    </div>
+</details>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  KANBAN CARDS — Cada <div class="section"> vira card no kanban     ║ -->
+<!-- ║  data-col: finalizado | em-andamento | nao-realizado | futuro      ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+<!-- Card Exemplo: Finalizado com evidências -->
+<div class="section" id="implementado-0" data-col="finalizado">
+    <h2>{{FEATURE_FINALIZADA_TITULO}}</h2>
+    <div style="padding-bottom: 8px;">
+        <div style="margin-bottom: 16px;"><span class="badge implemented">Implementado</span></div>
+        <div class="callout good">
+            <strong>Como funciona hoje:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_FINALIZADA_DESCRICAO}}</p>
+        </div>
+        <div class="callout info">
+            <strong>Arquivos/observações:</strong>
+            <p style="margin-bottom:0;"><code>{{ARQUIVO_PRINCIPAL}}</code>, <code>{{ARQUIVO_SECUNDARIO}}</code>.</p>
+        </div>
+        <div class="callout good">
+            <strong>Evidências deste card:</strong>
+            <p>{{DESCRICAO_DAS_EVIDENCIAS}}</p>
+            <div class="evidence-grid card-evidence">
+                <div class="evidence-item">
+                    <img src="{{CAMINHO_SCREENSHOT_1}}" alt="{{ALT_SCREENSHOT_1}}">
+                    <div><strong>{{TITULO_SCREENSHOT_1}}</strong><br><span class="small">{{DESCRICAO_SCREENSHOT_1}}</span></div>
+                </div>
+                <div class="evidence-item">
+                    <img src="{{CAMINHO_SCREENSHOT_2}}" alt="{{ALT_SCREENSHOT_2}}">
+                    <div><strong>{{TITULO_SCREENSHOT_2}}</strong><br><span class="small">{{DESCRICAO_SCREENSHOT_2}}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Card Exemplo: Em Andamento -->
+<div class="section" id="parcial-0" data-col="em-andamento">
+    <h2>{{FEATURE_PARCIAL_TITULO}}</h2>
+    <div style="padding-bottom: 8px;">
+        <div style="margin-bottom: 16px;"><span class="badge partial">Parcial</span></div>
+        <div class="callout good">
+            <strong>Parte Pronta:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_PARCIAL_PARTE_PRONTA}}</p>
+        </div>
+        <div class="callout warn">
+            <strong>O que falta decidir/fazer:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_PARCIAL_O_QUE_FALTA}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Card Exemplo: Não Realizado -->
+<div class="section" id="nao-implementado-0" data-col="nao-realizado">
+    <h2>{{FEATURE_NAO_IMPLEMENTADA_TITULO}}</h2>
+    <div style="padding-bottom: 8px;">
+        <div style="margin-bottom: 24px;"><span class="badge missing">Não implementado</span></div>
+        <div class="callout info">
+            <strong>Contexto:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_NAO_IMPLEMENTADA_CONTEXTO}}</p>
+        </div>
+        <div class="callout risk">
+            <strong>Recomendação:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_NAO_IMPLEMENTADA_RECOMENDACAO}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Card Exemplo: Futuro / Roadmap -->
+<div class="section" id="futuro-0" data-col="futuro">
+    <h2>{{FEATURE_FUTURA_TITULO}}</h2>
+    <div style="padding-bottom: 8px;">
+        <div style="margin-bottom: 16px;"><span class="badge decision">Futuro</span></div>
+        <div class="callout info">
+            <strong>Motivo para considerar:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_FUTURA_MOTIVO}}</p>
+        </div>
+        <div class="callout warn">
+            <strong>Pré-condição sugerida:</strong>
+            <p style="margin-bottom:0;">{{FEATURE_FUTURA_PREREQUISITO}}</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  PAINEL 2: COMPARATIVO DE MERCADO                                  ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<details class="document-panel" id="comparativo">
+    <summary>
+        <div style="display:flex; align-items:center; gap: 12px; color: var(--ink);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Comparativo mercado
+        </div>
+        <div class="panel-toggle-icon">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </summary>
+    <div class="panel-content">
+        <p>{{DESCRICAO_COMPARATIVO}}</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Capacidade de mercado</th>
+                    <th>Exemplos no mercado</th>
+                    <th>Projeto hoje</th>
+                    <th>Avaliação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{CAPACIDADE_1}}</td>
+                    <td>{{EXEMPLO_1}}</td>
+                    <td>{{PROJETO_HOJE_1}}</td>
+                    <td><span class="badge implemented">Implementado</span></td>
+                </tr>
+                <tr>
+                    <td>{{CAPACIDADE_2}}</td>
+                    <td>{{EXEMPLO_2}}</td>
+                    <td>{{PROJETO_HOJE_2}}</td>
+                    <td><span class="badge partial">Parcial</span></td>
+                </tr>
+                <tr>
+                    <td>{{CAPACIDADE_3}}</td>
+                    <td>{{EXEMPLO_3}}</td>
+                    <td>{{PROJETO_HOJE_3}}</td>
+                    <td><span class="badge missing">Não implementado</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</details>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  PAINEL 3: COBERTURA DE TESTES AUTOMATIZADOS                       ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<details class="document-panel" id="evidencias-panel">
+    <summary>
+        <div style="display:flex; align-items:center; gap: 12px; color: var(--ink);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Cobertura
+        </div>
+        <div class="panel-toggle-icon">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </summary>
+    <div class="panel-content">
+        <h3>Matriz De Cobertura Automatizada</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Cenário</th>
+                    <th>Cobertura</th>
+                    <th>Teste / evidência</th>
+                    <th>Observação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{CENARIO_TESTE_1}}</td>
+                    <td><span class="badge implemented">Automatizado</span></td>
+                    <td><code>{{NOME_TESTE_1}}</code></td>
+                    <td>{{OBSERVACAO_TESTE_1}}</td>
+                </tr>
+                <tr>
+                    <td>{{CENARIO_TESTE_2}}</td>
+                    <td><span class="badge partial">Parcial</span></td>
+                    <td><code>{{NOME_TESTE_2}}</code></td>
+                    <td>{{OBSERVACAO_TESTE_2}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</details>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  PAINEL 4: CENÁRIOS DE TESTE MANUAL                                ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<details class="document-panel" id="testes">
+    <summary>
+        <div style="display:flex; align-items:center; gap: 12px; color: var(--ink);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Teste manual
+        </div>
+        <div class="panel-toggle-icon">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </summary>
+    <div class="panel-content">
+        <p>Use estes cenários em staging. Para cada teste, colete print da UI e registros relevantes.</p>
+
+        <div class="test-card">
+            <h3>1. {{TESTE_MANUAL_1_TITULO}} <span class="badge market">{{SEVERIDADE}}</span></h3>
+            <div class="test-grid">
+                <div><strong>Pré-condição</strong><br>{{TESTE_MANUAL_1_PRECOND}}</div>
+                <div><strong>Passos</strong><br>{{TESTE_MANUAL_1_PASSOS}}</div>
+                <div><strong>Resultado esperado</strong><br>{{TESTE_MANUAL_1_RESULTADO}}</div>
+                <div class="coverage-ok"><strong>Evidência</strong><br>{{TESTE_MANUAL_1_EVIDENCIA}}
+                    <div class="evidence-links">{{TESTE_MANUAL_1_LINKS}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-card">
+            <h3>2. {{TESTE_MANUAL_2_TITULO}} <span class="badge missing">Ausente</span></h3>
+            <div class="test-grid">
+                <div><strong>Pré-condição</strong><br>{{TESTE_MANUAL_2_PRECOND}}</div>
+                <div><strong>Passos</strong><br>{{TESTE_MANUAL_2_PASSOS}}</div>
+                <div><strong>Resultado esperado</strong><br>{{TESTE_MANUAL_2_RESULTADO}}</div>
+                <div class="coverage-pending"><strong>Evidência</strong><br>{{TESTE_MANUAL_2_EVIDENCIA}}
+                    <div class="evidence-links">{{TESTE_MANUAL_2_LINKS}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</details>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  PAINEL 5: REFERÊNCIAS                                             ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+<details class="document-panel" id="referencias">
+    <summary>
+        <div style="display:flex; align-items:center; gap: 12px; color: var(--ink);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Referências
+        </div>
+        <div class="panel-toggle-icon">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </summary>
+    <div class="panel-content">
+        <h3>Código Interno</h3>
+        <div class="source-list">
+            <a href="{{LINK_ARQUIVO_INTERNO_1}}">{{NOME_ARQUIVO_INTERNO_1}}</a>
+            <a href="{{LINK_ARQUIVO_INTERNO_2}}">{{NOME_ARQUIVO_INTERNO_2}}</a>
+        </div>
+
+        <h3>Referências Externas</h3>
+        <div class="source-list">
+            <a href="{{LINK_EXTERNO_1}}" target="_blank" rel="noopener noreferrer">{{NOME_EXTERNO_1}}</a>
+            <a href="{{LINK_EXTERNO_2}}" target="_blank" rel="noopener noreferrer">{{NOME_EXTERNO_2}}</a>
+        </div>
+
+        <div class="callout info">
+            <strong>Como manter este documento vivo:</strong> sempre que mudar o lifecycle do projeto, atualizar este HTML no mesmo pull request.
+        </div>
+    </div>
+</details>
+
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  DIALOG, LIGHTBOX E KANBAN — NÃO ALTERAR (infraestrutura JS)       ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+<div id="app-dialog" class="dialog-overlay">
+    <div class="dialog-window">
+        <div class="dialog-header">
+            <h2 id="dialog-title">Detalhes</h2>
+            <button class="dialog-close">&times;</button>
+        </div>
+        <div class="dialog-body" id="dialog-content-area"></div>
+    </div>
+</div>
+
+<div id="lightbox" class="lightbox-modal">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // ╔═══════════════════════════════════════════════════════════════════╗
+    // ║  OWNER BADGES — Adapte os IDs para o seu projeto                 ║
+    // ║  stripeOwnedCards = cards cuja responsabilidade é do serviço      ║
+    // ║  externo (ex: Stripe); hybridOwnedCards = fluxo orquestrado      ║
+    // ║  entre sistema local e serviço externo.                          ║
+    // ║  Todos os demais = 'local' (implementado internamente).          ║
+    // ╚═══════════════════════════════════════════════════════════════════╝
+    const stripeOwnedCards = new Set([
+        // Adicione aqui os IDs dos cards cuja responsabilidade primária é externa
+        // Exemplo: 'implementado-3', 'futuro-1'
+    ]);
+
+    const hybridOwnedCards = new Set([
+        // Adicione aqui os IDs dos cards com fluxo orquestrado misto
+        // Exemplo: 'implementado-5', 'parcial-1'
+    ]);
+
+    const ownerBadgeFor = (section) => {
+      const owner = section.dataset.owner
+        || (stripeOwnedCards.has(section.id) ? 'stripe' : (hybridOwnedCards.has(section.id) ? 'hybrid' : 'local'));
+      const meta = {
+        stripe: ['Externo', 'stripe-owner', 'Responsabilidade primária do serviço externo'],
+        hybrid: ['Externo + Local', 'hybrid-owner', 'Fluxo orquestrado entre sistema local e serviço externo'],
+        local: ['Local', 'local-owner', 'Responsabilidade primária implementada internamente'],
+      }[owner] || ['Local', 'local-owner', 'Responsabilidade primária implementada internamente'];
+
+      return `<span class="badge ${meta[1]}" title="${meta[2]}">${meta[0]}</span>`;
+    };
+
+    const mainContent = document.querySelector('.main-content');
+    if (!mainContent) return;
+    
+    // --- Tab Menu Logic ---
+    const topMenu = document.createElement('div');
+    topMenu.className = 'top-menu';
+    
+    const hero = mainContent.querySelector('.hero');
+    if (hero) hero.parentNode.insertBefore(topMenu, hero.nextSibling);
+
+    const panels = Array.from(mainContent.querySelectorAll('details.document-panel'));
+    
+    // Transform existing details panels into tab panels
+    panels.forEach(panel => {
+        const summary = panel.querySelector('summary');
+        let title = "Tab";
+        let iconHtml = "";
+        if (summary) {
+            const div = summary.querySelector('div');
+            if (div) {
+                const svg = div.querySelector('svg');
+                if (svg) iconHtml = svg.outerHTML;
+                title = div.innerText.trim();
+            }
+        }
+        
+        const tab = document.createElement('a');
+        tab.className = 'top-menu-item';
+        tab.href = '#' + panel.id;
+        tab.innerHTML = (iconHtml ? iconHtml + ' ' : '') + title;
+        topMenu.appendChild(tab);
+        
+        const divPanel = document.createElement('div');
+        divPanel.className = 'document-panel';
+        divPanel.id = panel.id;
+        const panelContent = panel.querySelector('.panel-content');
+        if (panelContent) divPanel.appendChild(panelContent);
+        panel.parentNode.replaceChild(divPanel, panel);
+    });
+
+    // Create Kanban Panel Wrapper as Tab
+    const kanbanWrapper = document.createElement('div');
+    kanbanWrapper.className = 'document-panel';
+    kanbanWrapper.id = 'kanban-panel';
+    
+    const kanbanTab = document.createElement('a');
+    kanbanTab.className = 'top-menu-item';
+    kanbanTab.href = '#kanban-panel';
+    kanbanTab.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg> Kanban Board`;
+    if (topMenu.children.length > 1) {
+        topMenu.insertBefore(kanbanTab, topMenu.children[1]);
+    } else {
+        topMenu.appendChild(kanbanTab);
+    }
+    
+    kanbanWrapper.innerHTML = `
+    <div class="panel-content" id="kanban-mount-point" style="background:var(--surface); padding: 32px 24px 8px 24px;">
+        <div class="kanban-owner-legend">
+            <span class="badge stripe-owner">Externo</span>
+            <span>fluxo cuja responsabilidade primária fica no serviço externo.</span>
+            <span class="badge hybrid-owner">Externo + Local</span>
+            <span>fluxo orquestrado entre sistema local e serviço externo.</span>
+            <span class="badge local-owner">Local</span>
+            <span>fluxo implementado, orquestrado ou validado pelo sistema interno.</span>
+        </div>
+    </div>
+    `;
+
+    topMenu.parentNode.insertBefore(kanbanWrapper, topMenu.nextSibling);
+
+    const activateTab = (hash) => {
+        if (!hash) hash = window.location.hash || '#' + (panels[0]?.id || 'kanban-panel');
+        if (hash === '#') hash = '#' + (panels[0]?.id || 'kanban-panel');
+        
+        let decodedId = decodeURIComponent(hash.substring(1));
+        let targetPanel = document.getElementById(decodedId);
+        if (!targetPanel || !targetPanel.classList.contains('document-panel')) {
+            targetPanel = document.getElementById('arquitetura-tests-panel') || document.getElementById('kanban-panel');
+            hash = '#' + targetPanel.id;
+            decodedId = targetPanel.id;
+        }
+        
+        document.querySelectorAll('.document-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.top-menu-item').forEach(m => m.classList.remove('active'));
+        
+        if (targetPanel) targetPanel.classList.add('active');
+        const activeTab = topMenu.querySelector(`[href="${hash}"]`) || topMenu.querySelector(`[href="#${decodedId}"]`);
+        if (activeTab) activeTab.classList.add('active');
+    };
+
+    window.addEventListener('hashchange', () => activateTab(window.location.hash));
+    
+    // Activate initial tab
+    setTimeout(() => activateTab(window.location.hash), 50);
+    
+    // Create Kanban Board
+    const board = document.createElement('div');
+    board.className = 'kanban-board';
+    board.innerHTML = `
+        <div class="kanban-col" data-col="nao-realizado">
+            <div class="kanban-col-header">Não Realizado <span class="count">0</span></div>
+            <div class="kanban-col-body"></div>
+        </div>
+        <div class="kanban-col" data-col="em-andamento">
+            <div class="kanban-col-header">Em Andamento <span class="count">0</span></div>
+            <div class="kanban-col-body"></div>
+        </div>
+        <div class="kanban-col" data-col="finalizado">
+            <div class="kanban-col-header">Finalizado <span class="count">0</span></div>
+            <div class="kanban-col-body"></div>
+        </div>
+        <div class="kanban-col" data-col="futuro">
+            <div class="kanban-col-header">Futuro <span class="count">0</span></div>
+            <div class="kanban-col-body"></div>
+        </div>
+    `;
+    
+    kanbanWrapper.querySelector('#kanban-mount-point').appendChild(board);
+    
+    // Extract .section items and transform into kanban cards
+    const sections = Array.from(mainContent.querySelectorAll('.section'));
+    
+    // Dialog refs
+    const dialogOverlay = document.getElementById('app-dialog');
+    const dialogTitle = document.getElementById('dialog-title');
+    const dialogContentArea = document.getElementById('dialog-content-area');
+    const dialogCloseBtn = document.querySelector('.dialog-close');
+    let activeCardContent = null;
+    let activeCardNode = null;
+    
+    const closeDialog = () => {
+        dialogOverlay.classList.remove('active');
+        setTimeout(() => {
+            dialogOverlay.style.display = 'none';
+            if (activeCardContent && activeCardNode) {
+                activeCardContent.style.display = 'none';
+                activeCardNode.appendChild(activeCardContent);
+            }
+            activeCardContent = null;
+            activeCardNode = null;
+            dialogContentArea.innerHTML = '';
+        }, 200);
+    };
+    
+    dialogCloseBtn.addEventListener('click', closeDialog);
+    dialogOverlay.addEventListener('click', (e) => {
+        if (e.target === dialogOverlay) closeDialog();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && dialogOverlay.classList.contains('active')) closeDialog();
+    });
+    
+    // Process sections into kanban cards
+    sections.forEach(section => {
+        const colTarget = section.dataset.col || 'finalizado';
+        const colBody = board.querySelector(`.kanban-col[data-col="${colTarget}"] .kanban-col-body`);
+        
+        section.className = 'kanban-card';
+        
+        const h2 = section.querySelector('h2');
+        const titleText = h2 ? h2.innerHTML : 'Detalhes';
+        if (h2) section.removeChild(h2);
+        
+        // Wrap content
+        const contentBlock = document.createElement('div');
+        contentBlock.className = 'kanban-card-details';
+        contentBlock.style.display = 'none';
+        
+        while (section.firstChild) {
+            contentBlock.appendChild(section.firstChild);
+        }
+        
+        // Calculate image attachments badge
+        const imgCount = contentBlock.querySelectorAll('img').length;
+        const attachmentBadge = imgCount > 0 ? 
+            `<span title="${imgCount} imagens anexadas" style="display:flex; align-items:center; gap:4px; font-size:11px; background:#f1f5f9; color:var(--muted); padding:3px 6px; border-radius:6px; font-weight:600;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>${imgCount}</span>` : '';
+        const ownerBadge = ownerBadgeFor(section);
+
+        // Build visible card
+        section.innerHTML = `
+            <h2>${titleText}</h2>
+            <div style="display:flex; align-items:center; gap: 8px;">
+                ${ownerBadge}
+                ${attachmentBadge}
+                <div class="kanban-card-icon" style="flex-shrink: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+            </div>
+        `;
+        section.appendChild(contentBlock);
+        
+        if (colBody) colBody.appendChild(section);
+        
+        // Click to open dialog
+        section.addEventListener('click', () => {
+            dialogTitle.innerHTML = titleText;
+            contentBlock.style.display = 'block';
+            dialogContentArea.appendChild(contentBlock);
+            activeCardContent = contentBlock;
+            activeCardNode = section;
+            
+            dialogOverlay.style.display = 'flex';
+            setTimeout(() => dialogOverlay.classList.add('active'), 10);
+        });
+    });
+    
+    // Update column counts
+    ['nao-realizado', 'em-andamento', 'finalizado', 'futuro'].forEach(target => {
+        const col = board.querySelector(`.kanban-col[data-col="${target}"]`);
+        const count = col.querySelectorAll('.kanban-card').length;
+        col.querySelector('.count').innerText = count;
+    });
+
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lbCloseBtn = document.querySelector('.lightbox-close');
+    
+    document.addEventListener('click', function(e) {
+        let target = e.target;
+        if (target.tagName === 'IMG' && target.closest('.evidence-item')) {
+            lightbox.style.display = 'flex';
+            setTimeout(() => lightbox.classList.add('active'), 10);
+            lightboxImg.src = target.src;
+        }
+    });
+    
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        setTimeout(() => lightbox.style.display = 'none', 300);
+    };
+    
+    lbCloseBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e) {
+        if (e.target !== lightboxImg && e.target !== lbCloseBtn) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape" && lightbox.classList.contains('active')) closeLightbox();
+    });
+    
+});
+</script>
+</body>
+</html>
