@@ -12,7 +12,7 @@ A documentação é entregue em formato **HTML auto-contido**, com CSS moderno (
 > **OBRIGATÓRIO**: Antes de gerar qualquer documentação, você DEVE copiar integralmente o arquivo template localizado em:
 > 
 > ```
-> /Users/leonardocaldas/Workspace/skills/fonte-da-verdade-template.html
+> https://github.com/leonardocaldas/skills/blob/main/fonte-da-verdade-template.html
 > ```
 > 
 > Este arquivo contém **todo o CSS, JavaScript e estrutura HTML** necessários. Você deve:
@@ -189,7 +189,7 @@ const hybridOwnedCards = new Set(['implementado-5', 'parcial-1']); // IDs dos ca
 
 ## Diretrizes de Comportamento do Agente
 
-1. **Copie o template, não reescreva**: O template em `/Users/leonardocaldas/Workspace/skills/fonte-da-verdade-template.html` contém CSS e JS prontos. Copie-o e substitua os placeholders. Nunca recrie o CSS ou JavaScript do zero.
+1. **Copie o template, não reescreva**: O template em `https://github.com/leonardocaldas/skills/blob/main/fonte-da-verdade-template.html` contém CSS e JS prontos. Copie-o e substitua os placeholders. Nunca recrie o CSS ou JavaScript do zero.
 
 2. **Mentalidade "Evidence First"**: Em vez de texto descritivo vazio, exija "Prova Visual e Técnica" amarrada às funcionalidades. Force screenshots (`evidence-grid`) ou asserts de banco para cada card finalizado.
 
